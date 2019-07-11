@@ -13,27 +13,29 @@ public class Application {
         boolean run = true;
 
         HashMap<String,Integer> hashMap = new HashMap<String, Integer>();
-        while (run = true){
+        while (run != false){
 
             if(hashMap.containsKey(x)){
                 int temp = hashMap.get(x).intValue();
                 hashMap.put(x,temp);
                 System.out.println( "you have added string "+ temp +  "  times");
+                temp++;
 
             }else{
-                hashMap.put(x,1);
-            }
-            x = scanner.nextLine();
+                hashMap.put(x,0);
+
 
             System.out.println("Do you want to quit");
             Scanner scanner1 = new Scanner(System.in);
-            String anwser = scanner1.nextLine();
-            anwser.equalsIgnoreCase(anwser);
-            if(anwser == "yes"){
-                break;
+            String answer = scanner1.nextLine();
+            answer.equalsIgnoreCase(answer);
+            if(answer == "yes"){
+                run = false;
             }else{
                 run = true;
             }
+            }
+            x = scanner.nextLine();
         }
     }
 }
